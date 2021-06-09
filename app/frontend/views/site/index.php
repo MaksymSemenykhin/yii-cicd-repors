@@ -4,17 +4,18 @@
 function unixToData($unixtime){
     $date = date_create();
     date_timestamp_set($date, $unixtime);
-    return date_format($date, 'd-m');
+    return date_format($date, 'd-m-y h:i');
 }
 
 $this->title = 'My Yii Application';
 ?>
 <style>
     .rotate {
-
+        color: #5e5e5e;
         transform: rotate(-90deg);
         display: inline-block;
-
+        width: 35px;
+        margin-top: 20px;
         /* Legacy vendor prefixes that you probably don't need... */
 
         /* Safari */
