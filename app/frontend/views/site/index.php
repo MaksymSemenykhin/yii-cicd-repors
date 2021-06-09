@@ -18,9 +18,13 @@ $this->title = 'My Yii Application';
     .chart .line .blue{
         display:inline-block;background-color: green;width: 25px;
     }
-    .chart .line .yellew{
+    .chart .line .yellow{
         display:inline-block;background-color: yellow;width: 25px;
     }
+    .chart .line .red{
+        display:inline-block;background-color: red;width: 25px;
+    }
+
 </style>
 <div class="site-index">
 
