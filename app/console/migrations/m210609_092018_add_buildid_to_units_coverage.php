@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m210609_092017_add_username_to_units_coverage
+ * Class m210609_092018_add_buildid_to_units_coverage
  */
-class m210609_092017_add_username_to_units_coverage extends Migration
+class m210609_092018_add_buildid_to_units_coverage extends Migration
 {
     public function up()
     {
