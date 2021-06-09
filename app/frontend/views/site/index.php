@@ -24,7 +24,7 @@ function lineBlock($row, $key){
     }
 
     if($build_id){
-        return '<a href="https://teamcity-ilm.dev2.us/repository/download/tests_UnitServer_16nodeYarn/'.$build_id.':id/index.html"><div class="line" title="'.$rawValue.'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($created_at).'</span></div></a>';
+        return '<div class="line" title="'.$rawValue.'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate"><a href="https://teamcity-ilm.dev2.us/repository/download/tests_UnitServer_16nodeYarn/'.$build_id.':id/index.html">'.unixToData($created_at).'</a></span></div>';
     }else{
         return '<div class="line" title="'.$rawValue.'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($created_at).'</span></div>';
     }
