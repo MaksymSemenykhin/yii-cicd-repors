@@ -4,7 +4,7 @@
 function unixToData($unixtime){
     $date = date_create();
     date_timestamp_set($date, $unixtime);
-    return date_format($date, 'd-m-y H:i');
+    return date_format($date, 'd-m');
 }
 
 $this->title = 'My Yii Application';
