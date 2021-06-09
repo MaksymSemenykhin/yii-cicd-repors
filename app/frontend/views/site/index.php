@@ -13,7 +13,7 @@ $this->title = 'My Yii Application';
     .rotate {
 
         transform: rotate(-90deg);
-
+        display: inline-block;
 
         /* Legacy vendor prefixes that you probably don't need... */
 
