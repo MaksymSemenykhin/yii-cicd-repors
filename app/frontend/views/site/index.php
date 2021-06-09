@@ -4,7 +4,7 @@
 function unixToData($unixtime){
     $date = date_create();
     date_timestamp_set($date, $unixtime);
-    return date_format($date, 'U = Y-m-d H:i:s');
+    return date_format($date, 'd-m-y H:i');
 }
 
 $this->title = 'My Yii Application';
@@ -87,7 +87,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$row['statements'].'</span><span class="rotate ">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$row['statements'].'</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -110,7 +110,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span>span class="rotate ">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span>span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -132,7 +132,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span>span class="rotate ">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span>span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -156,7 +156,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span>span class="rotate ">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span>span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
