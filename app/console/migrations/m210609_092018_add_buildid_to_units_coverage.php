@@ -9,7 +9,7 @@ class m210609_092018_add_buildid_to_units_coverage extends Migration
 {
     public function up()
     {
-        $this->addColumn('{{%units_coverage}}', 'build_id', $this->smallInteger()->defaultValue(null));
+        $this->addColumn('{{%units_coverage}}', 'build_id', $this->bigInteger()->defaultValue(null));
     }
 
     public function down()
