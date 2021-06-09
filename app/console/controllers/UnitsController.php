@@ -13,7 +13,7 @@ class UnitsController extends Controller
      *
      * @return mixed
      */
-    public function actionParseFile($file, $branch, $username)
+    public function actionParseFile($file, $branch, $username,$build_id)
     {
 
         $content = file_get_contents($file);
@@ -42,6 +42,7 @@ class UnitsController extends Controller
         $unit->branch = $branch;
         $unit->created_at = (new \DateTime())->getTimestamp();
         $unit->username = $username;
+        $unit->build_id = $build_id;
 
         var_dump($unit->attributes);
         var_dump($unit->save());
