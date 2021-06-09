@@ -88,7 +88,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$row['statements'].'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -100,7 +100,6 @@ $this->title = 'My Yii Application';
                 <?php
                 foreach ($data as $row) {
                     $value = floor($row['branches']);
-                    $value = floor($row['statements']);
                     if($value>70){
                         $color = 'green' ;
                     }else{
@@ -111,7 +110,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -122,7 +121,6 @@ $this->title = 'My Yii Application';
                 <?php
                 foreach ($data as $row) {
                     $value = floor($row['lines']);
-                    $value = floor($row['statements']);
                     if($value>70){
                         $color = 'green' ;
                     }else{
@@ -133,7 +131,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -145,8 +143,7 @@ $this->title = 'My Yii Application';
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
-                    $value = floor($row['functions']*10);
-                    $value = floor($row['statements']);
+                    $value = floor($row['functions']);
                     if($value>70){
                         $color = 'green' ;
                     }else{
@@ -157,7 +154,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
