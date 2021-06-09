@@ -6,7 +6,7 @@ $this->title = 'My Yii Application';
 ?>
 <style>
     .chart{
-        height: 100px;
+        height: 120px;
     }
     .chart .line{
         /*height: 100px;*/
