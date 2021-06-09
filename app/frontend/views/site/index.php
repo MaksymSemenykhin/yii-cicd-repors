@@ -26,6 +26,11 @@ $this->title = 'My Yii Application';
     }
 
 </style>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 <div class="site-index">
 
 <!--    <div class="jumbotron">-->
