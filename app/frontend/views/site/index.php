@@ -1,10 +1,38 @@
 <?php
 
 /* @var $this yii\web\View */
+function unixToData($unixtime){
+    $date = date_create();
+    date_timestamp_set($date, $unixtime);
+    return date_format($date, 'U = Y-m-d H:i:s');
+}
 
 $this->title = 'My Yii Application';
 ?>
 <style>
+    .rotate {
+
+        transform: rotate(-90deg);
+
+
+        /* Legacy vendor prefixes that you probably don't need... */
+
+        /* Safari */
+        -webkit-transform: rotate(-90deg);
+
+        /* Firefox */
+        -moz-transform: rotate(-90deg);
+
+        /* IE */
+        -ms-transform: rotate(-90deg);
+
+        /* Opera */
+        -o-transform: rotate(-90deg);
+
+        /* Internet Explorer */
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    }
     .chart{
         height: 120px;
     }
@@ -26,11 +54,7 @@ $this->title = 'My Yii Application';
     }
 
 </style>
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
+
 <div class="site-index">
 
 <!--    <div class="jumbotron">-->
@@ -63,7 +87,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div data-toggle="tooltip" data-placement="top" title="'.($row['branch'].':'.$row['username']).'" class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$row['statements'].'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$row['statements'].'</span><span class="rotate ">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -86,7 +110,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div data-toggle="tooltip" data-placement="top" title="'.($row['branch'].':'.$row['username']).'" class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span>span class="rotate ">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -108,7 +132,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div data-toggle="tooltip" data-placement="top" title="'.($row['branch'].':'.$row['username']).'" class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span>span class="rotate ">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -132,7 +156,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div data-toggle="tooltip" data-placement="top" title="'.($row['branch'].':'.$row['username']).'" class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span>span class="rotate ">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
