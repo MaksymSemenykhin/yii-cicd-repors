@@ -88,7 +88,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" title="'.$row['statements'].'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -110,7 +110,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" title="'.$row['branches'].'"  ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -131,7 +131,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" title="'.$row['lines'].'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -154,7 +154,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" title="'.$row['functions'].'"  ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
