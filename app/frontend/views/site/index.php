@@ -11,10 +11,10 @@ $this->title = 'My Yii Application';
 ?>
 <style>
     .rotate {
-        color: #5e5e5e;
+        color: yellowgreen;
         transform: rotate(-90deg);
         display: inline-block;
-        width: 35px;
+        width: 36px;
         margin-top: 20px;
         /* Legacy vendor prefixes that you probably don't need... */
 
@@ -111,7 +111,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span>span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -133,7 +133,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span>span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -157,7 +157,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span>span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
