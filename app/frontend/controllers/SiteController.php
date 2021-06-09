@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\M210607195007UnitsCoverage;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -74,7 +75,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $data = M210607195007UnitsCoverage::find()->asArray()->all();
+//        var_dump($data);
+        return $this->render('index',['data'=>$data]);
     }
 
     /**
