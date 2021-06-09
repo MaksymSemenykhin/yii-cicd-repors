@@ -48,6 +48,9 @@ class UnitsController extends Controller
         var_dump($unit->errors);
 
     }
-
+    public function actionDump()
+    {
+        var_dump(M210607195007UnitsCoverage::find()->asArray()->all());
+    }
 
 }
