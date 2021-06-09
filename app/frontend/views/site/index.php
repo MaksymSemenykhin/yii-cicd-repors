@@ -74,6 +74,9 @@ $this->title = 'My Yii Application';
             <h2>
                 statements
             </h2>
+                <h5 style="color: gray;font-style: italic;">
+                    has each statement in the program been executed?
+                </h5>
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
@@ -96,6 +99,9 @@ $this->title = 'My Yii Application';
             <h2>
                 branches
             </h2>
+                <h5 style="color: gray;font-style: italic;">
+                    has each branch of each control structure (such as in if and case statements) been executed? For example, given an if statement, have both the true and false branches been executed? This is a subset of edge coverage.
+                </h5>
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
@@ -140,6 +146,9 @@ $this->title = 'My Yii Application';
             <h2>
                 functions
             </h2>
+                <h5 style="color: gray;font-style: italic;">
+                    has each function (or subroutine) in the program been called?
+                </h5>
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
