@@ -14,6 +14,7 @@ use yii\db\ActiveRecord;
  * @property int $lines
  * @property string $branch
  * @property int $created_at
+ * @property int $build_id
  * @property string $username
  *
  */
@@ -35,7 +36,7 @@ class M210607195007UnitsCoverage extends ActiveRecord
     {
         return [
             [['statements', 'branches', 'functions', 'lines', 'branch', 'created_at'], 'required'],
-            [['created_at'], 'integer'],
+            [['created_at','build_id'], 'integer'],
             [['statements', 'branches', 'functions', 'lines'], 'double'],
             [['branch','username'], 'string', 'max' => 255],
         ];

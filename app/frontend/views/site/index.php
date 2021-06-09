@@ -6,7 +6,29 @@ function unixToData($unixtime){
     date_timestamp_set($date, $unixtime);
     return date_format($date, 'd-m');
 }
+function lineBlock($row, $key){
 
+    $rawValue = $row[$key];
+    $created_at = $row['created_at'];
+    $build_id = $row['build_id'];
+
+    $value = floor($rawValue);
+    if($value>70){
+        $color = 'green' ;
+    }else{
+        if($value>50){
+            $color = 'yellow' ;
+        }else{
+            $color = 'red' ;
+        }
+    }
+
+    if($build_id){
+        return '<a href="https://teamcity-ilm.dev2.us/repository/download/tests_UnitServer_16nodeYarn/'.$build_id.':id/index.html"></a><div class="line" title="'.$rawValue.'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($created_at).'</span></div></a>';
+    }else{
+        return '<div class="line" title="'.$rawValue.'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($created_at).'</span></div>';
+    }
+}
 $this->title = 'My Yii Application';
 ?>
 <style>
@@ -58,15 +80,6 @@ $this->title = 'My Yii Application';
 
 <div class="site-index">
 
-<!--    <div class="jumbotron">-->
-<!--        <h1>Congratulations!</h1>-->
-<!---->
-<!--        <p class="lead">You have successfully created your Yii-powered application.</p>-->
-<!---->
-<!--        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>-->
-<!--    </div>-->
-
-
     <div class="body-content">
 
         <div class="row">
@@ -80,18 +93,18 @@ $this->title = 'My Yii Application';
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
-                    $value = floor($row['statements']);
-                    if($value>70){
-                        $color = 'green' ;
-                    }else{
-                        if($value>50){
-                            $color = 'yellow' ;
-                        }else{
-                            $color = 'red' ;
-                        }
-                    }
+//                    $value = floor($row['statements']);
+//                    if($value>70){
+//                        $color = 'green' ;
+//                    }else{
+//                        if($value>50){
+//                            $color = 'yellow' ;
+//                        }else{
+//                            $color = 'red' ;
+//                        }
+//                    }
 
-                    echo '<div class="line" title="'.$row['statements'].'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo lineBlock($row, 'statements');
                 }
                 ?>
             </div>
@@ -105,18 +118,19 @@ $this->title = 'My Yii Application';
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
-                    $value = floor($row['branches']);
-                    if($value>70){
-                        $color = 'green' ;
-                    }else{
-                        if($value>50){
-                            $color = 'yellow' ;
-                        }else{
-                            $color = 'red' ;
-                        }
-                    }
-
-                    echo '<div class="line" title="'.$row['branches'].'"  ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+//                    $value = floor($row['branches']);
+//                    if($value>70){
+//                        $color = 'green' ;
+//                    }else{
+//                        if($value>50){
+//                            $color = 'yellow' ;
+//                        }else{
+//                            $color = 'red' ;
+//                        }
+//                    }
+//
+//                    echo '<div class="line" title="'.$row['branches'].'"  ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo lineBlock($row, 'branches');
                 }
                 ?>
             </div>
@@ -126,18 +140,20 @@ $this->title = 'My Yii Application';
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
-                    $value = floor($row['lines']);
-                    if($value>70){
-                        $color = 'green' ;
-                    }else{
-                        if($value>50){
-                            $color = 'yellow' ;
-                        }else{
-                            $color = 'red' ;
-                        }
-                    }
+//                    $value = floor($row['lines']);
+//                    if($value>70){
+//                        $color = 'green' ;
+//                    }else{
+//                        if($value>50){
+//                            $color = 'yellow' ;
+//                        }else{
+//                            $color = 'red' ;
+//                        }
+//                    }
+//
+//                    echo '<div class="line" title="'.$row['lines'].'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo lineBlock($row, 'lines');
 
-                    echo '<div class="line" title="'.$row['lines'].'" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
                 }
                 ?>
             </div>
@@ -152,18 +168,19 @@ $this->title = 'My Yii Application';
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
-                    $value = floor($row['functions']);
-                    if($value>70){
-                        $color = 'green' ;
-                    }else{
-                        if($value>50){
-                            $color = 'yellow' ;
-                        }else{
-                            $color = 'red' ;
-                        }
-                    }
-
-                    echo '<div class="line" title="'.$row['functions'].'"  ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+//                    $value = floor($row['functions']);
+//                    if($value>70){
+//                        $color = 'green' ;
+//                    }else{
+//                        if($value>50){
+//                            $color = 'yellow' ;
+//                        }else{
+//                            $color = 'red' ;
+//                        }
+//                    }
+//
+//                    echo '<div class="line" title="'.$row['functions'].'"  ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$value.'%</span><span class="rotate">'.unixToData($row['created_at']).'</span></div>';
+                    echo lineBlock($row, 'functions');
                 }
                 ?>
             </div>
