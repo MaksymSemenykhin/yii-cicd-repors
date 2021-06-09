@@ -5,6 +5,9 @@
 $this->title = 'My Yii Application';
 ?>
 <style>
+    .chart{
+        height: 100px;
+    }
     .chart .line{
         /*height: 100px;*/
         display:inline-block;width: 25px;margin: 10px
@@ -14,6 +17,9 @@ $this->title = 'My Yii Application';
     }
     .chart .line .blue{
         display:inline-block;background-color: green;width: 25px;
+    }
+    .chart .line .yellew{
+        display:inline-block;background-color: yellow;width: 25px;
     }
 </style>
 <div class="site-index">
@@ -31,14 +37,25 @@ $this->title = 'My Yii Application';
     <div class="body-content">
 
         <div class="row">
+            <div class="col-lg-12">
             <h2>
                 statements
             </h2>
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
-                    $value = floor($row['statements']*10);
-                    echo '<div class="line" ><div class="green" style="height:'.$value.'px" ></div><span>'.$row['statements'].'</span></div>';
+                    $value = floor($row['statements']);
+                    if($value>70){
+                        $color = 'green' ;
+                    }else{
+                        if($value>50){
+                            $color = 'yellow' ;
+                        }else{
+                            $color = 'red' ;
+                        }
+                    }
+
+                    echo '<div class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$row['statements'].'</span></div>';
                 }
                 ?>
             </div>
@@ -49,8 +66,19 @@ $this->title = 'My Yii Application';
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
-                    $value = floor($row['branches']*10);
-                    echo '<div class="line" ><div class="blue" style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span></div>';
+                    $value = floor($row['branches']);
+                    $value = floor($row['statements']);
+                    if($value>70){
+                        $color = 'green' ;
+                    }else{
+                        if($value>50){
+                            $color = 'yellow' ;
+                        }else{
+                            $color = 'red' ;
+                        }
+                    }
+
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span></div>';
                 }
                 ?>
             </div>
@@ -60,8 +88,19 @@ $this->title = 'My Yii Application';
             <div class="chart">
                 <?php
                 foreach ($data as $row) {
-                    $value = floor($row['lines']*10);
-                    echo '<div class="line" ><div class="blue" style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span></div>';
+                    $value = floor($row['lines']);
+                    $value = floor($row['statements']);
+                    if($value>70){
+                        $color = 'green' ;
+                    }else{
+                        if($value>50){
+                            $color = 'yellow' ;
+                        }else{
+                            $color = 'red' ;
+                        }
+                    }
+
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span></div>';
                 }
                 ?>
             </div>
@@ -74,11 +113,22 @@ $this->title = 'My Yii Application';
                 <?php
                 foreach ($data as $row) {
                     $value = floor($row['functions']*10);
-                    echo '<div class="line" ><div class="blue" style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span></div>';
+                    $value = floor($row['statements']);
+                    if($value>70){
+                        $color = 'green' ;
+                    }else{
+                        if($value>50){
+                            $color = 'yellow' ;
+                        }else{
+                            $color = 'red' ;
+                        }
+                    }
+
+                    echo '<div class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span></div>';
                 }
                 ?>
             </div>
-
+            </div>
         </div>
 
     </div>
