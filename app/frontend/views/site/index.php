@@ -58,7 +58,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div data-toggle="tooltip" data-placement="top" title="'+($row['branch']+':'+$row['username'])+'" class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$row['statements'].'</span></div>';
+                    echo '<div data-toggle="tooltip" data-placement="top" title="'.($row['branch'].':'.$row['username']).'" class="line" ><div class="'.$color.'" style="height:'.$value.'px" ></div><span>'.$row['statements'].'</span></div>';
                 }
                 ?>
             </div>
@@ -81,7 +81,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div data-toggle="tooltip" data-placement="top" title="'+($row['branch']+':'+$row['username'])+'" class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span></div>';
+                    echo '<div data-toggle="tooltip" data-placement="top" title="'.($row['branch'].':'.$row['username']).'" class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['branches'].'</span></div>';
                 }
                 ?>
             </div>
@@ -103,7 +103,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div data-toggle="tooltip" data-placement="top" title="'+($row['branch']+':'+$row['username'])+'" class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span></div>';
+                    echo '<div data-toggle="tooltip" data-placement="top" title="'.($row['branch'].':'.$row['username']).'" class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['lines'].'</span></div>';
                 }
                 ?>
             </div>
@@ -127,7 +127,7 @@ $this->title = 'My Yii Application';
                         }
                     }
 
-                    echo '<div data-toggle="tooltip" data-placement="top" title="'+($row['branch']+':'+$row['username'])+'" class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span></div>';
+                    echo '<div data-toggle="tooltip" data-placement="top" title="'.($row['branch'].':'.$row['username']).'" class="line" ><div class="'.$color.'"  style="height:'.$value.'px" ></div><span>'.$row['functions'].'</span></div>';
                 }
                 ?>
             </div>
