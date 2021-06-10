@@ -61,7 +61,7 @@ $this->title = 'My Yii Application';
     }
     .chart .line{
         /*height: 100px;*/
-        display:inline-block;width: 25px;margin: 10px
+        display:inline-block;width: 5px;margin: 10px
     }
     .chart .line .green{
         display:inline-block;background-color: green;width: 25px;
