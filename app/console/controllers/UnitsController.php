@@ -27,16 +27,16 @@ class UnitsController extends Controller
 
         $unit = new M210607195007UnitsCoverage();
 
-        preg_match('/Statements\s+:\s(\d.\d\d)/', $content, $matches, PREG_OFFSET_CAPTURE);
+        preg_match('/Statements\s+:\s(\d*.\d*)/', $content, $matches, PREG_OFFSET_CAPTURE);
         $unit->statements = (float)$matches[1][0];
 
-        preg_match('/Branches\s+:\s(\d.\d\d)/', $content, $matches, PREG_OFFSET_CAPTURE);
+        preg_match('/Branches\s+:\s(\d*.\d*)/', $content, $matches, PREG_OFFSET_CAPTURE);
         $unit->branches = (float)$matches[1][0];
 
-        preg_match('/Functions\s+:\s(\d.\d\d)/', $content, $matches, PREG_OFFSET_CAPTURE);
+        preg_match('/Functions\s+:\s(\d*.\d*)/', $content, $matches, PREG_OFFSET_CAPTURE);
         $unit->functions = (float)$matches[1][0];
 
-        preg_match('/Lines\s+:\s(\d.\d\d)/', $content, $matches, PREG_OFFSET_CAPTURE);
+        preg_match('/Lines\s+:\s(\d*.\d*)/', $content, $matches, PREG_OFFSET_CAPTURE);
         $unit->lines = (float)$matches[1][0];
 
         $unit->branch = $branch;
