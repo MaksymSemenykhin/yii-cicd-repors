@@ -92,7 +92,7 @@ class SiteController extends Controller
         $prev = false;
         $newData = [];
         foreach ($data as $key => $value) {
-        if(  !$prev || ($value['created_at'] - $prev['created_at'] > $interval) ){
+        if(  !$prev || ($prev['created_at'] - $value['created_at'] > $interval) ){
             if( count($newData) >= 39 ){
                 break;
             }
