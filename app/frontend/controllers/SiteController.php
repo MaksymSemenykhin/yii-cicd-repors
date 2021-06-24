@@ -76,7 +76,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $branch = Yii::$app->request->get('branch')?Yii::$app->request->get('branch'):'dev';
-        $limit = Yii::$app->request->get('branch')?Yii::$app->request->get('limit'):20;
+        $limit = Yii::$app->request->get('limit')?Yii::$app->request->get('limit'):40;
         
         $data = M210607195007UnitsCoverage::find()
             ->where(['branch'=>$branch])
