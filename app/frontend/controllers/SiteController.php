@@ -76,8 +76,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $branch = Yii::$app->request->get('branch')?Yii::$app->request->get('branch'):'dev';
-        $limit = Yii::$app->request->get('limit')?Yii::$app->request->get('limit'):39;
-        $interval = Yii::$app->request->get('interval')?Yii::$app->request->get('interval'):(60 * 60 * 5);
+        $limit = Yii::$app->request->get('limit')?Yii::$app->request->get('limit'):1000;
+        $interval = Yii::$app->request->get('interval')?Yii::$app->request->get('interval'):(60 * 60 * 1);
         
         
         $data = M210607195007UnitsCoverage::find()
@@ -86,13 +86,18 @@ class SiteController extends Controller
             ->orderBy(['created_at'=>SORT_DESC])
             ->limit($limit)
             ->all();
+        
         $data = array_reverse($data);
+        
         $prev = false;
         $newData = [];
         foreach ($data as $key => $value) {
-        if(!$prev || ($value['created_at'] - $prev['created_at'] > $interval) ){
-                $newData[] = $value;
-                $prev = $value ;
+        if(  !$prev || ($value['created_at'] - $prev['created_at'] > $interval) ){
+            if( count($newData)>=39 ){
+                break 
+            }
+            $newData[] = $value;
+            $prev = $value ;
             }
         }
         
