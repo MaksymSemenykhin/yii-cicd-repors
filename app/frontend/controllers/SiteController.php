@@ -76,11 +76,13 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $branch = Yii::$app->request->get('branch')?Yii::$app->request->get('branch'):'dev';
+        $limit = Yii::$app->request->get('branch')?Yii::$app->request->get('limit'):20;
+        
         $data = M210607195007UnitsCoverage::find()
             ->where(['branch'=>$branch])
             ->asArray()
             ->orderBy(['created_at'=>SORT_DESC])
-            ->limit(5);
+            ->limit($limit);
             ->all();
         $data = array_reverse($data);
         
