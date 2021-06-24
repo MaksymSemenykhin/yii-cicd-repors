@@ -87,7 +87,6 @@ class SiteController extends Controller
             ->limit($limit)
             ->all();
         
-//         $data = array_reverse($data);
         
         $prev = false;
         $newData = [];
@@ -101,6 +100,7 @@ class SiteController extends Controller
             }
         }
         
+        $newData = array_reverse($newData);
         
         return $this->render('index',['data'=>$newData]);
     }
