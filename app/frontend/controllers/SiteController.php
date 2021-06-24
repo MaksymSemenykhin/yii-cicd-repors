@@ -76,7 +76,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $branch = Yii::$app->request->get('branch')?Yii::$app->request->get('branch'):'dev';
-        $limit = Yii::$app->request->get('limit')?Yii::$app->request->get('limit'):35;
+        $limit = Yii::$app->request->get('limit')?Yii::$app->request->get('limit'):39;
         
         $data = M210607195007UnitsCoverage::find()
             ->where(['branch'=>$branch])
@@ -85,8 +85,21 @@ class SiteController extends Controller
             ->limit($limit)
             ->all();
         $data = array_reverse($data);
+        $prev = false;
+        $newData = [];
+        $interval = 60 * 60 * 10;
+        foreach ($data as $key => $value) {
+            if($prev){
+                if($value['created_at'] - $prev['created_at'] > $interval){
+                    $newData[$value];
+                }
+                    
+            }
+            $prev = $value ;
+        }
         
-        return $this->render('index',['data'=>$data]);
+        
+        return $this->render('index',['data'=>$newData]);
     }
 
     /**
