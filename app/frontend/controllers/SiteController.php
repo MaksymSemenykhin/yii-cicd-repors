@@ -87,7 +87,7 @@ class SiteController extends Controller
             ->limit($limit)
             ->all();
         
-        $data = array_reverse($data);
+//         $data = array_reverse($data);
         
         $prev = false;
         $newData = [];
