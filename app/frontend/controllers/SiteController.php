@@ -77,7 +77,7 @@ class SiteController extends Controller
     {
         $branch = Yii::$app->request->get('branch')?Yii::$app->request->get('branch'):'dev';
         $limit = Yii::$app->request->get('limit')?Yii::$app->request->get('limit'):39;
-        $interval = Yii::$app->request->get('$interval')?Yii::$app->request->get('$interval'):(60 * 60 * 5);
+        $interval = Yii::$app->request->get('interval')?Yii::$app->request->get('interval'):(60 * 60 * 5);
         
         
         $data = M210607195007UnitsCoverage::find()
