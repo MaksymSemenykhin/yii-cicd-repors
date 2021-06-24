@@ -82,7 +82,7 @@ class SiteController extends Controller
             ->where(['branch'=>$branch])
             ->asArray()
             ->orderBy(['created_at'=>SORT_DESC])
-            ->limit($limit);
+            ->limit($limit)
             ->all();
         $data = array_reverse($data);
         
