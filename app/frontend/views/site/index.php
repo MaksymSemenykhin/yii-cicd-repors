@@ -58,6 +58,7 @@ $this->title = 'My Yii Application';
     }
     .chart{
         height: 120px;
+        text-align: end;
     }
     .chart .line{
         /*height: 100px;*/
