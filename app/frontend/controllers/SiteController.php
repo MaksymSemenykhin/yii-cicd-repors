@@ -93,10 +93,10 @@ class SiteController extends Controller
             if($prev){
                 if($value['created_at'] - $prev['created_at'] > $interval){
                     $newData[] = $value;
+                    $prev = $value ;
                 }
                     
             }
-            $prev = $value ;
         }
         
         
