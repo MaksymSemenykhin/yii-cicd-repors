@@ -91,7 +91,7 @@ class SiteController extends Controller
         foreach ($data as $key => $value) {
             if($prev){
                 if($value['created_at'] - $prev['created_at'] > $interval){
-                    $newData[$value];
+                    $newData[] = $value;
                 }
                     
             }
